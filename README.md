@@ -60,12 +60,17 @@ Probability $D(x)$ it will stake.
 
 ### Loss Functions
 
-For GANs, we quantify each’s strife,\
-**Discriminator Loss (**$L_D$):\
-$$L_D = -E_{x \sim p_{  ext{data}}}[\log D(x)] - E_{z \sim p_z}[\log(1 - D(G(z)))]$$
+For GANs, we quantify each’s strife,  
 
-**Generator Loss (**$L_G$):\
-$$L_G = -E_{z \sim p_z}[\log D(G(z))]$$
+### Discriminator Loss ($L_D$):  
+$$
+L_D = -E_{x \sim p_{\text{data}}}[\log D(x)] - E_{z \sim p_z}[\log(1 - D(G(z)))]
+$$
+
+### Generator Loss ($L_G$):  
+$$
+L_G = -E_{z \sim p_z}[\log D(G(z))]
+$$
 
 ## Training Process
 
@@ -95,8 +100,11 @@ $$
 L_{KL} = -\frac{1}{2} \sum_{i=1}^{d} (1 + \log \sigma_i^2 - \mu_i^2 - \sigma_i^2)
 $$
 
-**Total VAE Loss (**$L_{V A E}$):\
-$$L_{V A E} = L_{   ext{rec}} + L_{K L}$$
+### Total VAE Loss ($L_{V A E}$)
+
+$$
+L_{V A E} = L_{\text{rec}} + L_{K L}
+$$
 
 ## Autoencoders
 
@@ -129,38 +137,44 @@ The learning unfolds, intricate and fine.
 
 ### Gradient Descent
 
-To find the path where loss doth cease to grow,\
-In gradient descent, we follow the flow.\
-With step size bold, we traverse the steep,\
+To find the path where loss doth cease to grow,  
+In gradient descent, we follow the flow.  
+With step size bold, we traverse the steep,  
 Adjusting our weights, the secrets we keep.
 
-Let $\theta$ be the weight we strive to refine,\
-With the gradient, we measure the line:\
+Let $\theta$ be the weight we strive to refine,  
+With the gradient, we measure the line:
+
 $$
 \theta = \theta - \eta \nabla J(\theta)
-$$\
-Here, $\eta$ represents the learning rate bright,\
+$$
+
+Here, $\eta$ represents the learning rate bright,  
 Guiding us gently toward the optimal sight.
 
 ### Weight Update Rule
 
-Each weight shall change by the gradient's decree,\
-To minimize loss, as is plain to see.\
-The update rule thus doth elegantly state:\
+Each weight shall change by the gradient's decree,  
+To minimize loss, as is plain to see.  
+The update rule thus doth elegantly state:
+
 $$
 w_{\text{new}} = w_{\text{old}} - \eta \cdot \nabla L(w)
-$$\
-Where $L$ be loss, our burden to bear,\
+$$
+
+Where $L$ be loss, our burden to bear,  
 As we aim for precision with utmost care.
 
-**Mean Squared Error (MSE)**\
-To measure the error with clarity keen,\
+### Mean Squared Error (MSE)
+
+To measure the error with clarity keen,  
 The mean squared error provides a scene:
 
 $$
-\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (x_i - \hat{x}_i)^2
-$$\
-Where $y_i$ true values, and $\hat{y}_i$ the guesses,\
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$
+
+Where $y_i$ are true values, and $\hat{y}_i$ are the guesses,  
 A means to assess all our learning's stresses.
 
 ## Conclusion
